@@ -982,9 +982,9 @@
     </footer>
 
     <!-- Chatbot Widget -->
-    <!-- <div id="chatbot-widget">
+    <div id="chatbot-widget">
         <i class="fas fa-comments fa-lg"></i>
-    </div> -->
+    </div>
 
     <!-- Back to Top Button -->
     <div class="back-to-top">
@@ -1035,20 +1035,9 @@
         });
         
         // Chatbot widget (placeholder)
-        // document.getElementById('chatbot-widget').addEventListener('click', function() {
-        //     alert('Live chat support is coming soon!');
-        // });
+        document.getElementById('chatbot-widget').addEventListener('click', function() {
+            alert('Live chat support is coming soon!');
+        });
     </script>
-    <script>
-        // FlexChat Configuration
-        window.flexChatConfig = {
-            webhookUrl: "https://your-n8n-instance.com/webhook/path",
-            primaryColor: "#3b82f6",
-            welcomeText: "Hello! How can I help you today?",
-            position: "right", // or 'left'
-            logoUrl: "https://your-site.com/logo.png" // optional
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/dynamikapps/flexchat@latest/dist/flexchat.min.js" async></script>
-    </body>
+</body>
 </html>
