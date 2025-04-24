@@ -110,6 +110,20 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
+        /* Mobile menu background fix */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            
+            .navbar-scrolled .navbar-collapse {
+                background-color: white;
+            }
+        }
+        
         /* Hero Section */
         #hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.dynamikapps.com/wp-content/uploads/2025/04/showcasing-professional-contractors.jpg') center/cover no-repeat;
