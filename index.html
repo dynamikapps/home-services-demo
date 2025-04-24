@@ -269,7 +269,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-color) !important;
             color: white;
             padding: 4rem 0 2rem;
         }
@@ -981,10 +981,7 @@
         </div>
     </footer>
 
-    <!-- Chatbot Widget -->
-    <div id="chatbot-widget">
-        <i class="fas fa-comments fa-lg"></i>
-    </div>
+    <!-- Chatbot Widget (Removed in favor of FlexChat) -->
 
     <!-- Back to Top Button -->
     <div class="back-to-top">
@@ -1034,10 +1031,31 @@
             this.reset();
         });
         
-        // Chatbot widget (placeholder)
-        document.getElementById('chatbot-widget').addEventListener('click', function() {
-            alert('Live chat support is coming soon!');
+        // Chatbot functionality is now handled by FlexChat
+    </script>
+    <!-- FlexChat Widget -->
+    <script>
+        // Extract the website's primary color from CSS variables
+        const websitePrimaryColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--primary-color').trim();
+            
+        // FlexChat Configuration
+        window.flexChatConfig = {
+            webhookUrl: "https://your-n8n-instance.com/webhook/path",
+            primaryColor: websitePrimaryColor || "#ff7b00", // Use website's primary color with fallback
+            welcomeText: "Hello! How can I help you today?",
+            position: "right",
+            logoUrl: "https://your-site.com/logo.png" // optional
+        };
+        
+        // Fix footer background color override
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add style to override any external CSS affecting the footer
+            const styleEl = document.createElement('style');
+            styleEl.textContent = 'footer { background-color: #333333 !important; }';
+            document.head.appendChild(styleEl);
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/dynamikapps/flexchat@latest/dist/flexchat.min.js" async></script>
 </body>
 </html>
